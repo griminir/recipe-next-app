@@ -1,11 +1,6 @@
 @import 'tailwindcss';
 @config '../../tailwind.config.ts';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -210,9 +205,4 @@
   .category-tag {
     @apply font-medium text-[16px] bg-primary-100 px-4 py-2 rounded-full;
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
 }
