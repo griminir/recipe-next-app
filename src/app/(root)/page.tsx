@@ -14,6 +14,7 @@ export default async function Home({
       views: 99,
       author: {
         _id: 1,
+        name: 'Timmy storm',
       },
       _id: 1,
       description: 'this is a recipe description',
@@ -41,7 +42,7 @@ export default async function Home({
           {query ? `search results for "${query}"` : 'all recipes'}
         </p>
 
-        <ul className='mt-7 card-grid'>
+        <ul className='mt-7 card_grid'>
           {posts?.length > 0 ? (
             posts.map((post: RecipeCardType) => (
               <RecipeCard key={post?._id} post={post} />

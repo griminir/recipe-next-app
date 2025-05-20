@@ -17,7 +17,7 @@ const config: Config = {
       },
       colors: {
         primary: {
-          '100': '#C0FD16',
+          '100': '#EAFFE0',
           DEFAULT: '#A4DE02',
         },
         secondary: '#3C02DE',
