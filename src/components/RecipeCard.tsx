@@ -52,9 +52,12 @@ const RecipeCard = ({ post }: { post: RecipeTypeCard }) => {
       </Link>
 
       <div className='flex-between gap-3 mt-5'>
-        <Link href={`/?query=${category.toLowerCase()}`}>
-          <p className='text-16-medium'>{category}</p>
-        </Link>
+        {Array.isArray(category) &&
+          category.slice(0, 2).map((cat: { _id: string; title: string }) => (
+            <Link key={cat._id} href={`/?query=${cat.title.toLowerCase()}`}>
+              <p className='text-16-medium'>{cat.title}</p>
+            </Link>
+          ))}
         <button className='recipe-card_btn'>
           <Link href={`/recipe/${_id}`}>Details</Link>
         </button>

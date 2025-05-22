@@ -1,5 +1,7 @@
 import SearchForm from '@/components/SearchForm';
 import RecipeCard from '@/components/RecipeCard';
+import { client } from '@/sanity/lib/client';
+import { RECIPES_QUERY } from '@/sanity/lib/queries';
 
 export default async function Home({
   searchParams,
@@ -8,21 +10,10 @@ export default async function Home({
 }) {
   const query = (await searchParams).query;
 
-  const posts = [
-    {
-      _createdAt: new Date(),
-      views: 99,
-      author: {
-        _id: 1,
-        name: 'Timmy storm',
-      },
-      _id: 1,
-      description: 'this is a recipe description',
-      image: 'https://bilder.ngdata.no/7039010019828/kmh/large.jpg',
-      category: 'fast meals',
-      title: 'frozen pizza',
-    },
-  ];
+  const posts = await client.fetch(RECIPES_QUERY);
+
+  console.log(JSON.stringify(posts, null, 2));
+
   return (
     <>
       <section className='green_container'>
