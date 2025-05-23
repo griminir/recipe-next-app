@@ -1,5 +1,5 @@
 import SearchForm from '@/components/SearchForm';
-import RecipeCard from '@/components/RecipeCard';
+import RecipeCard, { RecipeCardType } from '@/components/RecipeCard';
 import { client } from '@/sanity/lib/client';
 import { RECIPES_QUERY } from '@/sanity/lib/queries';
 
@@ -12,7 +12,7 @@ export default async function Home({
 
   const posts = await client.fetch(RECIPES_QUERY);
 
-  console.log(JSON.stringify(posts, null, 2));
+  // console.log(JSON.stringify(posts, null, 2));
 
   return (
     <>

@@ -5,7 +5,7 @@ export const RECIPES_QUERY =
   _id,
   _createdAt,
   author -> {
-    _id, name, image, bio
+    _id, name, image
   }, 
   category[] -> {
     _id, title
@@ -13,7 +13,5 @@ export const RECIPES_QUERY =
   slug,
   description, 
   image,
-  ingredients, 
-  instructions,
   views,
 }`);
