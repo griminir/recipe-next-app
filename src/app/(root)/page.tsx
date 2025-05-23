@@ -1,7 +1,8 @@
 import SearchForm from '@/components/SearchForm';
 import RecipeCard, { RecipeCardType } from '@/components/RecipeCard';
-import { client } from '@/sanity/lib/client';
 import { RECIPES_QUERY } from '@/sanity/lib/queries';
+import { sanityFetch } from '@/sanity/lib/live';
+// import { client } from '@/sanity/lib/client';
 
 export default async function Home({
   searchParams,
@@ -10,7 +11,8 @@ export default async function Home({
 }) {
   const query = (await searchParams).query;
 
-  const posts = await client.fetch(RECIPES_QUERY);
+  // const posts = await client.fetch(RECIPES_QUERY); with out live
+  const { data: posts } = await sanityFetch({ query: RECIPES_QUERY });
 
   // console.log(JSON.stringify(posts, null, 2));
 
