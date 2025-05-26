@@ -33,7 +33,6 @@ export const RECIPE_BY_ID_QUERY =
   image,
   ingredients, 
   instructions,
-  views,
 }`);
 
 export const RECIPE_VIEWS_QUERY =

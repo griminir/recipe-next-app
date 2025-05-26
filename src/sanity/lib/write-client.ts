@@ -9,7 +9,7 @@ export const writeClient = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: false, // Set to false if statically generating pages, using ISR or tag-based revalidation
+  useCdn: false, // `false` for write operations
   token,
 });
 

@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import React, { Suspense } from 'react';
 
-// export const experimental_ppr = true; // Enable parallel routes, this needs canary next version
+export const experimental_ppr = true; // Enable parallel routes, this needs canary next version
 
 const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const id = (await params).id;
