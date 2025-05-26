@@ -16,3 +16,27 @@ export const RECIPES_QUERY =
   image,
   views,
 }`);
+
+export const RECIPE_BY_ID_QUERY =
+  defineQuery(`*[_type == 'recipe' && _id == $id][0]{
+  _id,
+  _createdAt,
+  author -> {
+    _id, name, username, image,
+  }, 
+  category[] -> {
+    _id, title
+  }, 
+  slug,
+  title,
+  description, 
+  image,
+  ingredients, 
+  instructions
+}`);
+
+export const RECIPE_VIEWS_QUERY =
+  defineQuery(`*[_type == 'recipe' && _id == $id][0]{
+  _id,
+  views
+}`);
