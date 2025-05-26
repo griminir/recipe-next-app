@@ -32,7 +32,8 @@ export const RECIPE_BY_ID_QUERY =
   description, 
   image,
   ingredients, 
-  instructions
+  instructions,
+  views,
 }`);
 
 export const RECIPE_VIEWS_QUERY =
