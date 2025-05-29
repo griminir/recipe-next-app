@@ -1,4 +1,4 @@
-import { Skeleton } from '@/components/ui/skeleton';
+
 import View from '@/components/view';
 import { formatDate } from '@/lib/utils';
 import { client } from '@/sanity/lib/client';
@@ -7,7 +7,7 @@ import { Category } from '@/sanity/sanity.types';
 import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import React, { Suspense } from 'react';
+import React from 'react';
 
 export const experimental_ppr = true; // Enable parallel routes, this needs canary next version
 
@@ -119,9 +119,7 @@ const Page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
             <hr className='divider' />
 
-            <Suspense fallback={<Skeleton className='view_skeleton' />}>
-              <View id={id} />
-            </Suspense>
+            <View id={id} />
           </div>
         </div>
       </section>
